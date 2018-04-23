@@ -3,6 +3,8 @@
 	<head>
 
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1,
+		shrink-to-fit=no"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
 		<title>Phonebox Technology - More Than Just A Box</title>
@@ -13,10 +15,130 @@
 		href="./node_modules/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" href="./dist/css/app.min.css"/>
 
+		<!-- Font awesome icons script -->
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
 	</head>
 	<body class="b-body">
 
 		<h1 class="sr-only">Phonebox Technology - More than just a box</h1>
+
+		<header class="b-header">
+			
+			<div class="b-header-content">
+				
+				<div class="b-header-titlebox">
+
+					<h2 class="b-header-titlebox__title">phonebox technology</h2>
+					<div class="b-header-titlebox__decoration"></div>
+
+				</div>
+
+				<!-- 'srcset' attribute for more responsive images -->
+
+				<img class="b-header-content__img" 
+						 srcset="./dist/images/sideways-phone-small.jpg 163w,
+										 ./dist/images/sideways-phone-large.jpg 178w"
+						 sizes="(max-width: 576px) 200px,
+						 				(max-width: 768px) 250px,
+						 				300px"						 				
+						 src="./dist/images/sideways-phone-large.jpg" 
+						 alt="Phonebox technology's smartphone shown sideways"/>
+
+			</div>
+
+			<!-- Sliders for headers -->
+
+			<div class="b-header-slider b-header-slider--horizontal 
+			b-header-slider--top b-header-slider--left b-header-slider--light-violet
+			js-slider">
+			</div>
+			<div class="b-header-slider b-header-slider--horizontal 
+			b-header-slider--bottom b-header-slider--right 
+			b-header-slider--light-violet js-slider"></div>
+			<div class="b-header-slider b-header-slider--vertical 
+			b-header-slider--top b-header-slider--right b-header-slider--light-violet
+			js-slider">
+			</div>
+			<div class="b-header-slider b-header-slider--vertical 
+			b-header-slider--bottom b-header-slider--left b-header-slider--light-violet
+			js-slider">
+			</div>
+		</header>
+
+		<!-- Main content section -->
+
+		<main>
+			
+			<h2 class="sr-only">Phonebox Technology - main content section</h2>
+
+			<section class="b-phones-section">
+				
+				<h3 class="sr-only">Phonebox Technology - understanding our phones</h3>
+
+				<div class="b-phones-card b-phones-card--centered b-phones-card--small">
+					<h3 class="b-phones-card__label b-phones-card__label--white">
+						phones
+					</h3>
+				</div>
+
+				<div class="b-phones-card b-phones-card--spaced b-phones-card--large
+				b-phones-card--centered">
+					<p class="b-phones-card__text b-phones-card__text--black">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</div>
+
+			</section>
+
+			<section class="b-phone-highlight">
+
+				<h3 class="sr-only">Phonebox Technology - phone highlight section</h3>	
+
+				<div class="b-highlight-card  b-highlight-card--flex 
+				b-highlight-card--centered">
+
+					<h3 class="b-highlight-card__label b-highlight-card__label--black">
+						meet phonebox
+					</h3>
+					
+					<img class="b-highlight-card__img" 
+							 srcset="./dist/images/white-phone-small.png 374w,
+											 ./dist/images/white-phone-large.png 500w"
+							 sizes="(max-width: 576px) 200px,
+							 				(max-width: 768px) 250px,
+							 				300px"						 				
+							 src="./dist/images/white-phone-large.png" 
+							 alt="Phonebox technology's main smartphone"/>
+
+				</div>
+
+				<div class="b-highlight-card b-highlight-card--flex
+				b-highlight-card--column b-highlight-card--column-end">
+
+					<div class="b-highlight-textbox js-highlight-textbox">
+						
+						<h3 class="b-highlight-textbox__title js-highlight-textbox-title">	
+						</h3>
+
+						<p class="b-highlight-textbox__text 
+						b-highlight-textbox__text--white js-highlight-textbox-text"></p>
+
+					</div>
+
+					<div class="b-highlight-buttonbox js-highlight-buttonbox"></div>
+					
+				</div>
+				
+			</section>
+
+		</main>
 
 		<!-- Main script -->
 

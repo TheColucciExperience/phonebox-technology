@@ -1,0 +1,32 @@
+
+// General mixins app  file
+
+// Label for custom cards
+
+.label() {
+	width: 50%;
+	padding: .5rem 1rem;
+	font-family: @titleFont;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+	&--white {
+		background-color: @black;
+		color: @white;
+	}
+	&--black {
+		background-color: @white;
+		color: @black;
+	}
+}
+
+// General text boilerplate
+
+.text() {
+	font-family: @textFont;
+	font-weight: 700;
+	font-size: .9rem;	
+	&--black { color: @black; }
+	&--white { color: @white; }
+}
+

@@ -4,15 +4,238 @@
  * namespace for block elements
  */
 
-// Importing fonts, colors and animations
+// Importing fonts, colors, animations and mixins
 
 @import 'imports/_fonts';
 @import 'imports/_colors';
 @import 'imports/_animations';
+@import 'imports/_mixins';
 
 // Initial configurations for body
 
 .b-body {	
 	overflow-x: hidden;
 	background-color: @white;	
+}
+
+// Styles for header and it's elements
+
+.b-header {
+	position: relative;		// Reference for child nodes
+	width: 95vw;
+	height: 95vh;
+	margin: 2.5vh auto;	
+	&-content {
+		overflow: hidden;		
+		position: relative;		
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		box-shadow: 3px 3px 2px fadeout(@black, 80%),
+	             -3px -3px 2px fadeout(@black, 80%);
+		&__img {
+			position: absolute;
+			z-index: 0;
+			bottom: 5%;
+			left: 0;
+			@media (min-width: 576px) {
+				bottom: -20%;
+				@media (min-width: 768px) {
+					left: 10%;
+					bottom: -40%;
+					@media (min-width: 992px) { bottom: -20%; }
+				}
+			}
+		}
+	}
+	&-titlebox {
+		position: relative;
+		z-index: 10;
+		width: 80%;		
+		@media (min-width: 576px) {
+			width: 70%;			
+			@media (min-width: 768px) { width: 50%; }
+		}
+		&__title {
+			position: relative;
+			z-index: 10;
+			padding: .5rem 1rem;
+			font-family: @titleFont;
+			font-weight: 700;
+			font-size: 2.2rem;
+			text-transform: uppercase;
+			color: @white;
+			background-color: @black;			
+			@media (min-width: 576px) {				
+				font-size: 2.8rem;
+				@media (min-width: 768px) { font-size: 3.5rem; }
+			}
+		}
+		&__decoration {
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: @darkViolet;
+			transform: rotate(5deg);
+		}
+	}
+}
+
+// Header sliders
+
+.b-header-slider {
+	position: absolute;
+	transition-duration: .5s;
+	&--vertical {	width: .1rem; }
+	&--horizontal { height: .1rem; }
+	&--top { top: 0; }
+	&--left { left: 0; }
+	&--right { right: 0; }
+	&--bottom { bottom: 0; }
+	&--light-violet { background-color: @lightViolet; }	
+}
+
+// Styles for phones section and it's main cards
+
+.b-phones-section {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 2.5vh 2.5vw;
+	@media (min-width: 768px) {
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+}
+
+.b-phones-card {
+	min-height: 50vh;
+	box-shadow: 2px 2px 1px fadeout(@black, 90%),
+	            -2px -2px 1px fadeout(@black, 90%);
+	width: 100%;
+	margin-bottom: 1rem;
+	@media (min-width: 768px) {
+		&--small { width: 32vw; }
+		&--large { width: 60vw; }
+	}
+	&--black { background-color: @black; }
+	&--centered {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&--spaced { padding: 2rem; }
+	&__label {
+		.label;
+	}
+	&__text {
+		.text;
+	}
+}
+
+// These styles will take care of the phone highlight section
+
+.b-phone-highlight:extend(.b-phones-section) {
+	min-height: 100vh;
+	padding-top: 3rem;
+	padding-bottom: 3rem; 
+	background-color: @darkGrey;		
+}
+
+// Highlights cards styles
+
+.b-highlight-card {
+	position: relative;
+	min-height: 50vh;
+	width: 100%;
+	overflow: hidden;	
+	background-color: @black;
+	box-shadow: 2px 2px 1px fadeout(@black, 10%),
+	            -2px -2px 1px fadeout(@black, 10%);
+	@media (min-width: 768px) {
+		width: 46vw;
+		margin-bottom: 0;
+	}
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+		@media (min-width: 768px) { margin-bottom: 0; }
+	}
+	&--flex { display: flex; }
+	&--centered {		
+		justify-content: center;
+		align-items: center;
+	}
+	&--column {	flex-flow: column nowrap;	}
+	&--column-end { justify-content: space-between; }
+	&__label {
+		.label;
+		z-index: 10;
+		@media (min-width: 768px)	{ font-size: 2rem; }
+	}
+	&__img {
+		/* These adjustment will keep the phone image consistent throughout 
+		 * viewports
+		 */
+		position: absolute;
+		z-index: 0;
+		top: -50%;
+		left: 5%;
+		@media (min-width: 576px) {
+			top: -70%;
+			left: 10%;
+			@media (min-width: 768px) { top: -30%; }
+		}
+	}
+}
+
+// Styles for highlight textbox
+
+.b-highlight-textbox {
+	padding: 2rem;
+	&__title {
+		width: 50%;
+		margin-left: auto;
+		margin-bottom: 2rem;
+		padding: .5rem 1rem;
+		font-family: @titleFont;
+		font-weight: 700;		
+		text-transform: uppercase;
+		text-align: center;
+		color: @white;
+		background-color: @violet;
+	}
+	&__text {
+		.text;
+	}
+}
+
+// Styles for highlight buttonbox and it's buttons
+
+.b-highlight-buttonbox {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.b-highlight-button {
+	display: block;
+	width: 25%;
+	border: none;
+	padding: 1rem;
+	font-size: 2rem;
+	transition-duration: .5s;
+	cursor: pointer;
+	&:focus { outline: 1px solid @lightViolet; }
+	&--inactive {
+		color: @darkGrey;
+		background-color: transparent;
+	}
+	&--active {
+		color: @darkViolet;
+		background-color: @white;
+	}
 }

@@ -1,0 +1,25 @@
+{
+	"highlights": [
+		{
+			"id": 1,
+			"title": "fast",
+			"text": "this is fast!",
+			"icon": "fa-bolt"
+		}, {
+			"id": 2,
+			"title": "strong",
+			"text": "this is strong!",
+			"icon": "fa-shield-alt"
+		}, {
+			"id": 3,
+			"title": "smart",
+			"text": "this is smart!",
+			"icon": "fa-chart-bar"
+		}, {
+			"id": 4,
+			"title": "secure",
+			"text": "this is secure!",
+			"icon": "fa-lock"
+		}
+	]
+}

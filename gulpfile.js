@@ -36,6 +36,13 @@ gulp.task( 'clean-images', function delStyles() {
 	return del( './dist/images' );
 } );
 
+// Task to copy necessary files. For now only JSON data.
+
+gulp.task( 'copy', function copyFiles() {
+	return gulp.src( './src/json/*.json' )
+		.pipe( gulp.dest( './dist/json' ) );
+} )
+
 // Task to compile and minify less files
 
 gulp.task( 'less', function compileLess() {
@@ -43,7 +50,16 @@ gulp.task( 'less', function compileLess() {
 	return gulp.src( './src/less/*.less' )
 		.pipe( plugins.sourcemaps.init() )
 		.pipe( plugins.less() )
-		.pipe( plugins.cssnano() )
+		.pipe( plugins.cssnano( {
+
+			reduceIdents: {
+				keyframes: false
+			},
+			discardUnused: {
+				keyframes: false
+			}
+
+		 } ) )
 		.pipe( plugins.concat( 'app.min.css' ) )
 		.pipe( plugins.sourcemaps.write( './' ) )		
 		.pipe( gulp.dest( './dist/css' ) )
@@ -81,7 +97,7 @@ gulp.task(
 	'serve',
 	gulp.series(
 		'clean',
-		gulp.parallel( 'less', 'scripts', 'images' ),
+		gulp.parallel( 'copy', 'less', 'scripts', 'images' ),
 		function initSyncServer() {
 
 			// Initiating server
