@@ -3,22 +3,22 @@
 		{
 			"id": 1,
 			"title": "fast",
-			"text": "this is fast!",
+			"text": "Phonebox is as fast as it can get. With our custom hardware technology associated with calibrated and optimized software, phonebox gives the best experience in performance and speed available for mobiles devices in the market today.",
 			"icon": "fa-bolt"
 		}, {
 			"id": 2,
 			"title": "strong",
-			"text": "this is strong!",
+			"text": "Phonebox hardware is proved to be 10 times more resistant than average mobile devices. Our technology is designed to be water-proof, fire-proof and even bullet proof! Now your favorite phone can save your life too!",
 			"icon": "fa-shield-alt"
 		}, {
 			"id": 3,
 			"title": "smart",
-			"text": "this is smart!",
+			"text": "Phonebox is more than just a device. It has intelligence made possible through many tests and technological advancements. With our custom CORSIRI software, you can talk to your phone as if it were your best friend! No need to do tasks yourself. Ask Phonebox!",
 			"icon": "fa-chart-bar"
 		}, {
 			"id": 4,
 			"title": "secure",
-			"text": "this is secure!",
+			"text": "Phonebox is tested daily against security flaws both in it's proprietary software as in third-party apps. Our specialized team is able to constantly release patches and updates to keep your software experience secure. Our advanced IDSs and IPSs report logs with direct connection to local authorities. This way attackers not only fail to exploit Phonebox, but also go to jail. Need security? Phonebox is the answer.",
 			"icon": "fa-lock"
 		}
 	]
