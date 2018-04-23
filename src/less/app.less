@@ -239,3 +239,218 @@
 		background-color: @white;
 	}
 }
+
+// Styles for tablet section
+
+.b-tablet-section {
+	overflow: hidden;
+	padding-top: 2rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	@media (min-width: 768px) {
+		padding-top: 4rem;
+		@media (min-width: 992px) { padding-top: 6rem; }
+	}
+	&__title {
+		margin-bottom: 1.5rem;
+		font-family: @titleFont;
+		font-weight: 700;
+		font-size: 2rem;
+		text-align: center;
+		text-transform: uppercase;
+		@media (min-width: 768px) {
+			font-size: 2.5rem;
+			@media (min-width: 992px) {
+				font-size: 3rem;
+			}
+		}
+	}
+	&__detached {
+		padding-left: .5rem;
+		padding-right: .5rem;
+		color: @white;
+		background-color: @lightViolet;
+		@media (min-width: 768px) {
+			padding-left: .8rem;
+			padding-right: .8rem;
+		}
+	}
+	&__text {		
+		font-family: @textFont;
+		font-weight: 700;
+		text-align: center;
+		color: @darkGrey;
+		@media (min-width: 576px) {
+			max-width: 35rem;
+			margin-right: auto;
+			margin-left: auto;			
+		}
+	}
+	&__img {
+		position: relative;
+		top: 2rem;
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		@media (min-width: 768px) {
+			top: 5rem;
+			@media (min-width: 992px) { top: 6rem; }
+		}
+	}
+}
+
+// Main styles for video section and videobox
+
+.b-video-section {
+	padding: 3rem 2.5vw;
+	background-color: @lightGrey;
+	&-platform {
+		
+	}
+	&__title {
+		.label;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 2rem;
+		font-size: 1.6rem;
+		@media (min-width: 576px) {
+			font-size: 2rem;
+			margin-left: 10vw;
+			@media (min-width: 768px) {
+				font-size: 2.5rem;
+				@media (min-width: 992px) {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+}
+
+// Styles for video section 'platform'
+
+.b-video-section-platform {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	background-color: @white;
+	box-shadow: 3px 3px 2px fadeout(@black, 80%),
+             -3px -3px 2px fadeout(@black, 80%);
+  @media (min-width: 576px) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		@media (min-width: 992px) {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+	}
+}
+
+.b-videobox {
+	position: relative;  // Reference position for child nodes
+	max-width: 50rem;
+	@media (min-width: 576px) {
+		width: 70%;		
+		margin-right: 10vw;
+		margin-left: auto;
+	}
+	&__video {
+		position: relative;	 // For z-index layering
+		z-index: 10;
+		width: 100%;	
+		margin-bottom: 0;
+	}
+}
+
+// Styles for videobox top layer
+
+.b-videobox-layer {
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 97.5%;
+	background-color: fadeOut(@black, 20%);
+	@media (min-width: 768px) {
+		height: 98%;
+		@media (min-width: 992px) { height: 98.5%; }
+	}
+}
+
+.b-videobox-playbtn {
+	border: 1px solid @white;
+	padding: 1rem;	
+	background-color: fadeOut(@black, 10%);
+	box-shadow: 2px 2px 1px @black;
+	cursor: pointer;
+	&:focus {
+		border-color: @lightViolet;
+		outline: none;
+		transition-duration: .4s;
+	}
+	&__icon {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: .5rem;
+		font-size: 3rem;
+		color: @violet;
+		@media (min-width: 992px) { font-size: 5rem; }
+	}
+	&__text {
+		font-family: @titleFont;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: @white;
+		@media (min-width: 992px) { font-size: 1.5rem; }
+	}
+}
+
+// General footer section styles
+
+.b-footer {
+	padding: 2rem 1rem;
+	background-color: @black;
+	@media (min-width: 768px) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+}
+
+.b-footer-listbox {
+	display: flex;
+	flex-flow: column nowrap;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 30rem;
+	@media (min-width: 576px) {
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		@media (min-width: 768px) { max-width: 40rem; }
+	}
+}
+
+.b-footer-list-title {
+	display: inline-block;
+	padding: .2rem .5rem;
+	font-family: @titleFont;
+	font-weight: 700;
+	text-transform: capitalize;
+	color: @black;
+	background-color: @white;
+}
+
+.b-footer-list {
+	list-style-type: none;
+	padding-left: 0;
+	&__link {
+		font-family: @titleFont;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #999;
+		transition-duration: .3s;
+		&:hover { color: @lightViolet; }
+	}
+}
